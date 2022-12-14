@@ -31,7 +31,7 @@ const mapToSignDetails = (address: IreturnAddress) => {
 }
 
 export function getServiceResponse(cep: string): Promise<any> {
-  return axios.get(`${urlApi}/38026190/json/`).then((response: AxiosResponse) => {
+  return axios.get(`${urlApi}/${cep}/json/`).then((response: AxiosResponse) => {
     return mapToSignDetails(response.data)
   })
     .catch((err) => console.error(err));
