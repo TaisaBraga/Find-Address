@@ -1,5 +1,8 @@
 .errorMessage {
-  color: #bf1650;
+  color: #FF0000;
+  font-family: "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
 }
 
 .errorMessage::before {

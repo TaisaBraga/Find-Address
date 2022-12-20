@@ -9,19 +9,31 @@ export const HomePage = () => {
   const [cep, setCep] = useState<string>('')
   const [inputValue, setInputValue] = useState<string>('')
   const [information, setInformation] = useState<boolean>(false)
+  const [error, setError] = useState<string | null>(null)
   const { register, handleSubmit, formState: { errors } } = useForm()
 
   useEffect(() => {
     getServiceResponse(cep).then((data) => {
-      setReturnApi(data)
+      if (JSON.stringify(data) === JSON.stringify({})) {
+        console.log('if undefined')
+        setError('ERRO INDEFINIDO')
+      } else {
+        console.log('else undefined', data)
+        setReturnApi(data)
+      }
     })
-      .catch((err) => err);
+      .catch(err => {
+        if (err !== undefined) {
+          console.log('erroooooo', err)
+        } else {
+          console.log('elsee')
+        }
+      })
   }, [cep])
 
   const maskCep = (inputValue: string) => {
     return inputValue.replace(/\D/g, '').replace(/^(\d{5})(\d{3})+?$/, '$1-$2');
   }
-
 
   const handleChange = (event: any) => {
     let value = maskCep(event.target.value)
@@ -29,18 +41,16 @@ export const HomePage = () => {
   }
 
   const handleClick = () => {
-
     setCep(inputValue)
-    if (returnAPi !== null) {
-      setInformation(true)
-    }
+    setInformation(true)
   }
 
   return (
     <div>
       <form onSubmit={handleSubmit(handleClick)}>
-        <input {...register("inputValue", { required: "Email Address is required" })} maxLength={8} onChange={handleChange} value={inputValue} />
-        {errors.inputValue && <p className='errorMessage'>This field is required</p>}
+        <input {...register('inputValue', { required: true, minLength: 9 })} maxLength={9} onChange={handleChange} value={inputValue} />
+        {errors?.inputValue?.type === "required" && <p className='errorMessage'>Este campo é obrigatório!</p>}
+        {errors?.inputValue?.type === "minLength" && (<p className='errorMessage'>O número mínimo de caracteres são 9!</p>)}
         <input type="submit" />
       </form>
       {information ? (
@@ -52,6 +62,7 @@ export const HomePage = () => {
           <p>{returnAPi.uf}</p>
         </div>
       ) : ('')}
+      {error && <p>{error}</p>}
     </div>
   )
 }

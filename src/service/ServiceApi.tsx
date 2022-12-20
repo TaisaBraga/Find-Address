@@ -35,5 +35,5 @@ export function getServiceResponse(cep: string): Promise<any> {
     console.log(`${urlApi}/${cep}/json/`)
     return mapToSignDetails(response.data)
   })
-    .catch((err) => err);
+    .catch(err => err);
 }
