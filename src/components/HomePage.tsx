@@ -48,9 +48,10 @@ export const HomePage = () => {
   }
 
   return (
-    <div>
+    <div className='HomePage'>
       <form onSubmit={handleSubmit(handleClick)}>
         <input
+          className='userInput'
           {
           ...register('inputValue', { required: true, minLength: 9 })}
           maxLength={9}
@@ -58,14 +59,14 @@ export const HomePage = () => {
           value={inputValue}
           onFocus={(e) => resetInput(e)}
         />
-        <input type="submit" />
+        <input type="submit" className='submitButton' />
         {errors?.inputValue?.type === "required" && <p className='errorMessage'>Este campo é obrigatório!</p>}
         {errors?.inputValue?.type === "minLength" && <p className='errorMessage'>O número mínimo de caracteres são 9!</p>}
 
       </form>
       {information && !error
         ? (
-          <div>
+          <div className='returnApi'>
             <p>{returnAPi.logradouro}</p>
             <p>{returnAPi.complemento}</p>
             <p>{returnAPi.bairro}</p>
