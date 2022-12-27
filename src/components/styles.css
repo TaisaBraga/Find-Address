@@ -6,6 +6,5 @@
 }
 
 .errorMessage::before {
-  display: inline;
   content: "⚠ ";
 }

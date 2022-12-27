@@ -15,18 +15,13 @@ export const HomePage = () => {
   useEffect(() => {
     getServiceResponse(cep).then((data) => {
       if (JSON.stringify(data) === JSON.stringify({})) {
-        console.log('if undefined')
-        setError('ERRO INDEFINIDO')
+        setError('Por favor, digite o CEP corretamente')
       } else {
-        console.log('else undefined', data)
         setReturnApi(data)
       }
     })
       .catch(err => {
         if (err !== undefined) {
-          console.log('erroooooo', err)
-        } else {
-          console.log('elsee')
         }
       })
   }, [cep])
@@ -40,29 +35,45 @@ export const HomePage = () => {
     setInputValue(value)
   }
 
+  const resetInput = (e: any) => {
+    e.target.value = "";
+    setInformation(false)
+    setError(null)
+  }
+
   const handleClick = () => {
     setCep(inputValue)
     setInformation(true)
+    setError(null)
   }
 
   return (
     <div>
       <form onSubmit={handleSubmit(handleClick)}>
-        <input {...register('inputValue', { required: true, minLength: 9 })} maxLength={9} onChange={handleChange} value={inputValue} />
-        {errors?.inputValue?.type === "required" && <p className='errorMessage'>Este campo é obrigatório!</p>}
-        {errors?.inputValue?.type === "minLength" && (<p className='errorMessage'>O número mínimo de caracteres são 9!</p>)}
+        <input
+          {
+          ...register('inputValue', { required: true, minLength: 9 })}
+          maxLength={9}
+          onChange={handleChange}
+          value={inputValue}
+          onFocus={(e) => resetInput(e)}
+        />
         <input type="submit" />
+        {errors?.inputValue?.type === "required" && <p className='errorMessage'>Este campo é obrigatório!</p>}
+        {errors?.inputValue?.type === "minLength" && <p className='errorMessage'>O número mínimo de caracteres são 9!</p>}
+
       </form>
-      {information ? (
-        <div>
-          <p>{returnAPi.logradouro}</p>
-          <p>{returnAPi.complemento}</p>
-          <p>{returnAPi.bairro}</p>
-          <p>{returnAPi.localidade}</p>
-          <p>{returnAPi.uf}</p>
-        </div>
-      ) : ('')}
-      {error && <p>{error}</p>}
+      {information && !error
+        ? (
+          <div>
+            <p>{returnAPi.logradouro}</p>
+            <p>{returnAPi.complemento}</p>
+            <p>{returnAPi.bairro}</p>
+            <p>{returnAPi.localidade}</p>
+            <p>{returnAPi.uf}</p>
+          </div>
+        ) : (null)}
+      {!!information && error && <p className='errorMessage'>{error}</p>}
     </div>
   )
 }
