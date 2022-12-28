@@ -1,6 +1,9 @@
 .homePage {
   box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.438);
+  display: flex;
+  flex-direction: column;
   height: 500px;
+  justify-content: center;
   padding: 1rem;
   width: 1000px;
 }
@@ -35,10 +38,27 @@
 }
 
 .returnApi {
+  align-items: center;
   color: #434242;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   font-family: 'Roboto';
   font-size: 1.2rem;
   padding: 0.8rem;
+
+}
+
+.returnApi>p {
+  align-items: center;
+  background-color: #F8F4EA;
+  border-radius: 3px;
+  border: 1px solid #85586F;
+  display: flex;
+  margin: 3px;
+  padding: 5px;
+  height: 24px;
+  width: 300px;
 }
 
 .errorMessage {

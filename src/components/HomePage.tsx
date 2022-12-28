@@ -51,6 +51,7 @@ export const HomePage = () => {
     <div className='homePage'>
       <form onSubmit={handleSubmit(handleClick)}>
         <input
+          placeholder='ZipCode*'
           className='userInput'
           {
           ...register('inputValue', { required: true, minLength: 9 })}
@@ -62,18 +63,15 @@ export const HomePage = () => {
         <input type="submit" className='submitButton' />
         {errors?.inputValue?.type === "required" && <p className='errorMessage'>Este campo é obrigatório!</p>}
         {errors?.inputValue?.type === "minLength" && <p className='errorMessage'>O número mínimo de caracteres são 9!</p>}
+        {!!information && error && <p className='errorMessage'>{error}</p>}
 
       </form>
-      {information && !error
-        ? (
-          <div className='returnApi'>
-            <p>Logadouro: {returnAPi.logradouro}</p>
-            <p>Bairro: {returnAPi.bairro}</p>
-            <p>Localidade: {returnAPi.localidade}</p>
-            <p>UF: {returnAPi.uf}</p>
-          </div>
-        ) : (null)}
-      {!!information && error && <p className='errorMessage'>{error}</p>}
+      <div className='returnApi'>
+        <p>Street: {information && !error && (returnAPi.logradouro)}</p>
+        <p>District: {information && !error && (returnAPi.bairro)}</p>
+        <p>City: {information && !error && (returnAPi.localidade)}</p>
+        <p>State: {information && !error && (returnAPi.uf)}</p>
+      </div>
     </div>
   )
 }
