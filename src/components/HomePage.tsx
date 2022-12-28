@@ -48,7 +48,7 @@ export const HomePage = () => {
   }
 
   return (
-    <div className='HomePage'>
+    <div className='homePage'>
       <form onSubmit={handleSubmit(handleClick)}>
         <input
           className='userInput'
@@ -67,11 +67,10 @@ export const HomePage = () => {
       {information && !error
         ? (
           <div className='returnApi'>
-            <p>{returnAPi.logradouro}</p>
-            <p>{returnAPi.complemento}</p>
-            <p>{returnAPi.bairro}</p>
-            <p>{returnAPi.localidade}</p>
-            <p>{returnAPi.uf}</p>
+            <p>Logadouro: {returnAPi.logradouro}</p>
+            <p>Bairro: {returnAPi.bairro}</p>
+            <p>Localidade: {returnAPi.localidade}</p>
+            <p>UF: {returnAPi.uf}</p>
           </div>
         ) : (null)}
       {!!information && error && <p className='errorMessage'>{error}</p>}

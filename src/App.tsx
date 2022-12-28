@@ -7,7 +7,7 @@ function App() {
       <h1 style={{
         color: '#85586F', fontFamily: 'Roboto Slab', margin: '2rem'
       }}>Find your address</h1>
-      <div>
+      <div className='infoAddress'>
         <HomePage />
       </div>
     </div>

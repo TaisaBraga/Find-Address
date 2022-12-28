@@ -1,3 +1,10 @@
+.homePage {
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.438);
+  height: 500px;
+  padding: 1rem;
+  width: 1000px;
+}
+
 .userInput {
   background-color: #F8F4EA;
   border: 1px solid #85586F;
