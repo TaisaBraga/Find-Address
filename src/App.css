@@ -8,8 +8,15 @@
   background-color: #F8EDE3;
 }
 
+@media (max-width: 400px) {
+  @media (min-width: 250px) {
+    .App>h1 {
+      font-size: 25px;
+    }
+  }
+}
+
 .infoAddress * {
   margin: 0 auto;
   background-color: #DFD3C3;
-
 }

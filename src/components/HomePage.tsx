@@ -72,6 +72,7 @@ export const HomePage = () => {
         <p>City: {information && !error && (returnAPi.localidade)}</p>
         <p>State: {information && !error && (returnAPi.uf)}</p>
       </div>
+      <input type="submit" className='submitButtonSmallScreen' />
     </div>
   )
 }

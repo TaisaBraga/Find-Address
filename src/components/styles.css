@@ -2,11 +2,202 @@
   box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.438);
   display: flex;
   flex-direction: column;
-  height: 500px;
   justify-content: center;
   padding: 1rem;
-  width: 1000px;
 }
+
+@media (max-width: 1800px) {
+  @media(min-width: 1041px) {
+    .homePage {
+      height: 500px;
+      width: 1000px;
+      padding: 0.5rem;
+    }
+
+    .submitButtonSmallScreen {
+      visibility: hidden;
+    }
+  }
+}
+
+@media (max-width: 1040px) {
+  @media (min-width: 921px) {
+    .homePage {
+      height: 400px;
+      width: 900px;
+    }
+
+    .submitButtonSmallScreen {
+      visibility: hidden;
+    }
+  }
+}
+
+@media (max-width: 920px) {
+  @media (min-width: 851px) {
+    .homePage {
+      height: 400px;
+      width: 800px;
+    }
+
+    .submitButtonSmallScreen {
+      visibility: hidden;
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  @media (min-width: 721px) {
+    .homePage {
+      height: 400px;
+      width: 690px;
+    }
+
+    .submitButtonSmallScreen {
+      visibility: hidden;
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  @media (min-width: 671px) {
+    .homePage {
+      height: 400px;
+      width: 650px;
+    }
+
+    .userInput {
+      font-size: 0.2rem;
+    }
+
+    .submitButton {
+      font-size: 0.6rem;
+    }
+
+    .submitButton {
+      visibility: visible;
+    }
+
+    .submitButtonSmallScreen {
+      visibility: hidden;
+    }
+  }
+}
+
+@media (max-width: 670px) {
+  @media (min-width: 551px) {
+    .homePage {
+      height: 400px;
+      width: 580px;
+    }
+
+    .userInput {
+      font-size: 0.2rem;
+    }
+
+    .submitButton {
+      font-size: 0.6rem;
+    }
+
+    .submitButton {
+      visibility: visible;
+    }
+
+    .submitButtonSmallScreen {
+      visibility: hidden;
+    }
+  }
+
+}
+
+@media (max-width: 550px) {
+  @media (min-width: 415px) {
+    .homePage {
+      height: 400px;
+      width: 450px;
+    }
+
+    .userInput {
+      font-size: 0.2rem;
+    }
+
+    .submitButton {
+      font-size: 0.6rem;
+    }
+
+    .submitButton {
+      visibility: hidden;
+    }
+
+    .submitButtonSmallScreen {
+      visibility: visible;
+    }
+  }
+
+}
+
+@media (max-width: 415px) {
+  @media (min-width: 321px) {
+    .homePage {
+      height: 430px;
+      width: 330px;
+    }
+
+    .userInput {
+      font-size: 0.2rem;
+    }
+
+    .submitButton {
+      visibility: hidden;
+    }
+
+    .submitButtonSmallScreen {
+      visibility: visible;
+    }
+  }
+
+}
+
+@media (max-width: 320px) {
+  @media (min-width: 250px) {
+    .homePage {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      height: 400px;
+      width: 260px;
+    }
+
+    .userInput {
+      width: 200px;
+      height: 20px;
+    }
+
+    .returnApi {
+      height: 40px;
+      width: 20px;
+    }
+
+    .returnApi>p {
+      align-items: center;
+      display: flex;
+      justify-content: start;
+      font-size: 14px;
+      width: 20px;
+    }
+
+    .submitButton {
+      visibility: hidden;
+    }
+
+    .submitButtonSmallScreen {
+      visibility: visible;
+      margin-top: 50px;
+    }
+  }
+
+}
+
 
 .userInput {
   background-color: #F8F4EA;
@@ -25,6 +216,19 @@
 }
 
 .submitButton {
+  background-color: #85586F;
+  border: 1px solid #85586F;
+  border-radius: 5px;
+  color: #F8EDE3;
+  font-size: 1.3rem;
+  margin-left: 0.4rem;
+  outline-color: #85586F;
+  padding: 0.5rem;
+  font-family: 'Roboto';
+  box-shadow: 1px 1px 8px #D0B8A8;
+}
+
+.submitButtonSmallScreen {
   background-color: #85586F;
   border: 1px solid #85586F;
   border-radius: 5px;
