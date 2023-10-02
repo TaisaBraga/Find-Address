@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Find-Address/static/css/main.6b91d4d7.css",
+    "main.js": "/Find-Address/static/js/main.b861c043.js",
+    "static/js/787.228070ce.chunk.js": "/Find-Address/static/js/787.228070ce.chunk.js",
+    "index.html": "/Find-Address/index.html",
+    "main.6b91d4d7.css.map": "/Find-Address/static/css/main.6b91d4d7.css.map",
+    "main.b861c043.js.map": "/Find-Address/static/js/main.b861c043.js.map",
+    "787.228070ce.chunk.js.map": "/Find-Address/static/js/787.228070ce.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6b91d4d7.css",
+    "static/js/main.b861c043.js"
+  ]
+}
